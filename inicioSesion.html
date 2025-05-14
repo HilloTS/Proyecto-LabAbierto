@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inicio de Sesión</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+
+    header {
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+      font-size: 20px;
+    }
+
+    header span {
+      text-decoration: underline;
+      color: #ffffff;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: calc(100vh - 50px);
+      text-align: center;
+    }
+
+    .login-box {
+      max-width: 350px;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .login-box h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .btn-black {
+      width: 100%;
+      padding: 12px;
+      background-color: black;
+      color: white;
+      font-size: 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .separator {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #999;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    .separator::before, .separator::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #ccc;
+    }
+
+    .separator:not(:empty)::before {
+      margin-right: 10px;
+    }
+
+    .separator:not(:empty)::after {
+      margin-left: 10px;
+    }
+
+    .btn-google {
+      width: 100%;
+      padding: 12px;
+      background-color: #f5f5f5;
+      color: black;
+      font-size: 14px;
+      border: none;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-google img {
+      width: 18px;
+      height: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Security Responsive Network
+  </header>
+
+  <div class="container">
+    <div class="login-box">
+      <form onsubmit="event.preventDefault(); window.location.href='index.html';">
+        <h2>¿Cuál es tu número de <br> teléfono o tu <br> correo electrónico?</h2>
+
+        <input type="text" placeholder="Teléfono o correo" required>
+        <input type="password" placeholder="Contraseña" required>
+
+        <button type="submit" class="btn-black">Continuar</button>
+      </form>
+
+      <div class="separator">o</div>
+
+      <button class="btn-google">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google icon">
+        Continúa con Google
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>

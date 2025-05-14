@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Agregar punto de emergencia</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      width: 320px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .input-container {
+      display: flex;
+      align-items: center;
+      background: #f1f1f1;
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 15px;
+      cursor: text;
+    }
+
+    .input-container i {
+      margin-right: 10px;
+      color: #000;
+    }
+
+    .input-container input {
+      border: none;
+      background: transparent;
+      outline: none;
+      width: 100%;
+      font-size: 14px;
+    }
+
+    .map-btn {
+      background: #000;
+      color: #fff;
+      border: none;
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 15px;
+      cursor: pointer;
+      opacity: 0.6;
+    }
+
+    .map-btn:hover {
+      opacity: 0.8;
+    }
+
+    .map-btn:active {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h3>Agregar punto de emergencia</h3>
+
+  <div class="input-container">
+    <i>📍</i>
+    <input id="direccion" type="text" placeholder="Punto de emergencia">
+  </div>
+
+  <button class="map-btn" onclick="elegirEnMapa()">Elegir en el mapa</button>
+</div>
+
+<!-- Google Maps Places API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpuoPZe9FDwXfu05TtygMbr-RThylV2-U&libraries=places&callback=initAutocomplete" async defer></script>
+
+<script>
+  function initAutocomplete() {
+    const input = document.getElementById('direccion');
+    const autocomplete = new google.maps.places.Autocomplete(input, {
+      types: ['geocode'],
+      componentRestrictions: { country: 'mx' }, // Puedes cambiar el país
+    });
+  }
+
+  function elegirEnMapa() {
+    alert("Abrir mapa para seleccionar punto (función por implementar)");
+  }
+</script>
+
+</body>
+</html>
